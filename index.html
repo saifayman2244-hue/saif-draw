@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saif Draw</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand-box">
+          <div class="logo">SD</div>
+          <div>
+            <h1>Saif Draw</h1>
+            <p>Chemical drawing workspace</p>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <button class="tool-btn active" data-tool="atom">
+            <span>Atom</span>
+          </button>
+          <button class="tool-btn" data-tool="bond-single">
+            <span>Single Bond</span>
+          </button>
+          <button class="tool-btn" data-tool="bond-double">
+            <span>Double Bond</span>
+          </button>
+          <button class="tool-btn" data-tool="bond-triple">
+            <span>Triple Bond</span>
+          </button>
+          <button class="tool-btn" data-tool="ring">
+            <span>Benzene Ring</span>
+          </button>
+          <button class="tool-btn" data-tool="erase">
+            <span>Erase</span>
+          </button>
+          <button class="tool-btn" data-tool="select">
+            <span>Select / Move</span>
+          </button>
+        </div>
+
+        <div class="panel">
+          <label for="moleculeName">Name to structure</label>
+          <div class="search-row">
+            <input id="moleculeName" type="text" value="benzene" placeholder="benzene, ethanol..." />
+            <button id="generateBtn">Generate</button>
+          </div>
+        </div>
+
+        <div class="panel stats-panel">
+          <h3>Overview</h3>
+          <div class="stat-line"><span>Atoms</span><strong id="atomCount">0</strong></div>
+          <div class="stat-line"><span>Bonds</span><strong id="bondCount">0</strong></div>
+          <div class="stat-line"><span>Type</span><strong id="moleculeType">Empty</strong></div>
+        </div>
+
+        <div class="panel actions-panel">
+          <button id="clearBtn" class="secondary">Clear</button>
+          <button id="saveBtn" class="primary">Save PNG</button>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <div class="canvas-header">
+          <div>
+            <h2>Drawing Board</h2>
+          </div>
+          <span class="status-pill" id="toolLabel">Atom Tool</span>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="chemCanvas" width="980" height="680"></canvas>
+        </div>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
